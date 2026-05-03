@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-POP UNIVERSE | Light & Glass</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#7c3aed',
+                        dark: '#1a1a1a',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(60px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .glass-thick {
+                @apply bg-white/40 backdrop-blur-[40px] border border-white/60 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)];
+            }
+            .text-gradient {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-brand to-pink-500;
+            }
+            .stagger-1 { animation-delay: 0.2s; }
+            .stagger-2 { animation-delay: 0.4s; }
+        }
+        
+        .reveal { opacity: 0; }
+        .reveal.active { @apply animate-fade-in-up; }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-dark font-sans overflow-x-hidden">
+
+    <!-- Premium Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center transition-all duration-500 glass-thick border-none">
+        <div class="flex items-center space-x-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg" class="w-8 h-auto shadow-sm rounded-sm" alt="Korea Flag">
+            <div class="text-2xl font-black tracking-tighter text-dark">K-P<span class="text-brand italic">O</span>P.</div>
+        </div>
+        <div class="hidden md:flex space-x-12 text-xs font-bold tracking-widest uppercase">
+            <a href="#about" class="hover:text-brand transition-colors">Vision</a>
+            <a href="#visuals" class="hover:text-brand transition-colors">Visuals</a>
+            <a href="#universe" class="hover:text-brand transition-colors">Universe</a>
+        </div>
+        <button class="px-6 py-2 bg-dark text-white rounded-full text-xs font-bold uppercase tracking-widest hover:bg-brand transition-all shadow-lg">Join Now</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-white">
+        <!-- New Light Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="hero_light.png" class="w-full h-full object-cover opacity-80" alt="Light Background">
+            <div class="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-[#f8fafc]"></div>
+        </div>
+
+        <div class="relative z-10 glass-thick p-12 md:p-24 rounded-[3rem] max-w-5xl mx-4 animate-fade-in-up">
+            <div class="text-center space-y-8">
+                <div class="inline-flex items-center space-x-2 px-4 py-1 rounded-full bg-brand/10 text-brand text-[10px] font-bold uppercase tracking-widest">
+                    <span>The Global Phenomenon</span>
+                </div>
+                <h1 class="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9]">
+                    Pure <span class="text-gradient">Elegance</span><br>
+                    <span class="font-serif italic font-normal text-dark/80">K-POP</span>
+                </h1>
+                <p class="text-dark/60 text-lg max-w-xl mx-auto leading-relaxed">
+                    시각적 투명함과 감각적인 사운드의 조화. <br>가장 현대적인 방식으로 재해석된 한국의 문화를 경험해 보세요.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button class="px-10 py-4 bg-brand text-white rounded-full font-bold uppercase tracking-widest hover:scale-105 transition-all shadow-xl shadow-brand/20">Get Started</button>
+                    <button class="px-10 py-4 glass-thick rounded-full font-bold uppercase tracking-widest hover:bg-white transition-all">Watch Film</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Glass Content Section -->
+    <section id="about" class="py-32 px-8 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+                <h2 class="text-4xl md:text-6xl font-black tracking-tighter mb-8 leading-tight">Visual <br><span class="text-brand">Transparency.</span></h2>
+                <div class="glass-thick p-8 rounded-3xl mb-8">
+                    <p class="text-dark/70 text-lg leading-relaxed">
+                        우리는 K-POP의 본질을 '투명함'과 '연결'에서 찾았습니다. 겹쳐진 유리 효과는 다채로운 문화가 어우러져 하나의 화모니를 이루는 모습을 상징합니다.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="glass-thick p-6 rounded-2xl text-center">
+                        <p class="text-3xl font-black text-brand">1st</p>
+                        <p class="text-[10px] uppercase font-bold opacity-40">Global Rank</p>
+                    </div>
+                    <div class="glass-thick p-6 rounded-2xl text-center">
+                        <p class="text-3xl font-black text-brand">24/7</p>
+                        <p class="text-[10px] uppercase font-bold opacity-40">Active Energy</p>
+                    </div>
+                </div>
+            </div>
+            <div class="reveal stagger-2 relative">
+                <div class="aspect-square glass-thick rounded-[4rem] p-4 animate-float">
+                    <img src="performance.png" class="w-full h-full object-cover rounded-[3.5rem] shadow-2xl" alt="Performance">
+                </div>
+                <!-- Decorative Circle -->
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-brand/20 blur-3xl rounded-full"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Universe Section with Thick Glass -->
+    <section id="universe" class="py-32 bg-[#f1f5f9]">
+        <div class="px-8 max-w-7xl mx-auto">
+            <div class="glass-thick p-12 md:p-20 rounded-[4rem] relative overflow-hidden reveal">
+                <div class="absolute -top-20 -left-20 w-80 h-80 bg-pink-200/30 blur-[100px] rounded-full"></div>
+                
+                <div class="relative z-10 text-center max-w-3xl mx-auto">
+                    <h2 class="text-5xl md:text-7xl font-black tracking-tighter mb-8">Connected Universe.</h2>
+                    <div class="grid md:grid-cols-2 gap-8 text-left mb-12">
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-brand">글로벌 팬덤</h3>
+                            <p class="text-dark/60 text-sm">국경과 언어를 초월하여 하나로 연결된 팬들은 K-POP을 지탱하는 가장 강력한 유리 벽과 같습니다.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-bold text-brand">디지털 혁신</h3>
+                            <p class="text-dark/60 text-sm">메타버스와 가상 현실을 통해 구현되는 새로운 무대 경험은 상상 이상의 몰입감을 제공합니다.</p>
+                        </div>
+                    </div>
+                    <img src="concert.png" class="w-full h-64 object-cover rounded-3xl mb-12 shadow-inner" alt="Universe">
+                    <button class="px-12 py-5 bg-dark text-white rounded-full font-bold uppercase tracking-widest hover:bg-brand transition-all">Explore the Universe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-24 px-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+            <div class="flex items-center space-x-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_South_Korea.svg" class="w-6 h-auto opacity-50" alt="Korea Flag">
+                <div class="text-2xl font-black tracking-tighter opacity-50">K-P<span class="text-brand italic">O</span>P.</div>
+            </div>
+            <div class="flex space-x-8 text-[10px] font-bold tracking-[0.2em] uppercase opacity-40">
+                <a href="#" class="hover:text-brand">Privacy</a>
+                <a href="#" class="hover:text-brand">Instagram</a>
+                <a href="#" class="hover:text-brand">Twitter</a>
+            </div>
+            <p class="text-[10px] uppercase tracking-widest opacity-20">&copy; 2026 Glass & Soul Studio</p>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
